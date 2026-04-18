@@ -25,7 +25,7 @@ export async function getWebsiteAsMarkdown(website, chromiumDebugPortURL) {
     console.log('✅ Connected to Chrome on port 9222');
 
     // Example: Go to a page and load Turndown
-    await page.goto('https://github.com/mixmark-io/turndown');
+    await page.goto(website);
 
     await page.addScriptTag({
         url: 'https://unpkg.com/turndown/dist/turndown.js'

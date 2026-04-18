@@ -78,7 +78,7 @@ function imageUrlExtract(markdown: string): string[] {
 }
 
 async function main() {
-  const website = "";
+  const website = "https://ipld.io/docs/codecs/known/dag-cbor/";
 
   const markdown = await getWebsiteAsMarkdown(website);
 
