@@ -1,11 +1,11 @@
 import fs from "fs/promises";
+import crypto from "crypto";
+import { getWebsiteAsMarkdown } from "../paulsStuff/getWebsiteAsMarkdown.js";
 
 async function getUrls() {
   const data = await fs.readFile("urls.txt", "utf-8");
   return data.split("\n");
 }
-
-import crypto from "crypto";
 
 /**
  * @param {ArrayBuffer} arrayBuffer
@@ -57,8 +57,34 @@ async function imageAndMetadataFetch(url: string) {
   };
 }
 
+function imageUrlExtract(markdown: string): string[] {
+  const imageUrls = [];
+
+  // 1) Markdown image syntax: ![alt](url "optional title")
+  const mdImageRegex = /!\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
+  let match;
+
+  while ((match = mdImageRegex.exec(markdown)) !== null) {
+    imageUrls.push(match[1]);
+  }
+
+  // 2) HTML <img src="...">
+  const htmlImgRegex = /<img[^>]+src=["']([^"']+)["']/g;
+  while ((match = htmlImgRegex.exec(markdown)) !== null) {
+    imageUrls.push(match[1]);
+  }
+
+  return imageUrls.filter((i) => i != null);
+}
+
 async function main() {
-  let urls = await getUrls();
+  const website = "";
+
+  const markdown = await getWebsiteAsMarkdown(website);
+
+  const urls = imageUrlExtract(markdown);
+
+  // let urls = await getUrls();
   for (let url of urls) {
     const res = await imageAndMetadataFetch(url);
 
