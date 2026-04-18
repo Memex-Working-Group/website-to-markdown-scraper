@@ -1,0 +1,4 @@
+https://substackcdn.com/image/fetch/$s_!qxuo!,w_64,h_64,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5e263f1-710f-4845-9372-e092435263ed_2016x2016.jpeg
+https://substackcdn.com/image/fetch/$s_!qxuo!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5e263f1-710f-4845-9372-e092435263ed_2016x2016.jpeg
+https://substackcdn.com/image/fetch/$s_!0n9H!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3f2311a-f85b-44f5-97a2-ea67d47042a8_768x1024.jpeg
+https://substackcdn.com/image/fetch/$s_!0n9H!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3f2311a-f85b-44f5-97a2-ea67d47042a8_768x1024.jpeg

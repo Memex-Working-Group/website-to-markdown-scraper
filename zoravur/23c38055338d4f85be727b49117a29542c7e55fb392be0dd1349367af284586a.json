@@ -1,0 +1,19 @@
+{
+  "url": {
+    "fullUrl": "https://substackcdn.com/image/fetch/$s_!qxuo!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5e263f1-710f-4845-9372-e092435263ed_2016x2016.jpeg",
+    "origin": "https://substackcdn.com",
+    "pathname": "/image/fetch/$s_!qxuo!,w_36,h_36,c_fill,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5e263f1-710f-4845-9372-e092435263ed_2016x2016.jpeg",
+    "filename": "https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5e263f1-710f-4845-9372-e092435263ed_2016x2016.jpeg",
+    "extension": "jpeg",
+    "search": null
+  },
+  "http": {
+    "contentType": "image/jpeg",
+    "contentLength": "1521",
+    "lastModified": null,
+    "etag": "\"jSFXnKaSKV8lr9Err_ICCnBz9MXw_7U_65s374ZFxjw/RImIyOTZlNjMwNWIwZmMxZmE1OGI1YTYyMjY0YmI2OTY4Ig\"",
+    "cacheControl": "public, max-age=31536000"
+  },
+  "hash": "23c38055338d4f85be727b49117a29542c7e55fb392be0dd1349367af284586a",
+  "saveTo": "23c38055338d4f85be727b49117a29542c7e55fb392be0dd1349367af284586a.json"
+}
