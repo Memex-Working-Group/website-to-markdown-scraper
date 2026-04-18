@@ -1,16 +1,25 @@
 {
-  "name": "paulsstuff",
+  "name": "website-to-markdown-scraper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "``` bash helium-browser --remote-debugging-port=9222 --disable-web-security ```",
+  "main": "getWebsiteAsMarkdown.js",
+  "dependencies": {
+    "playwright": "^1.59.1",
+    "playwright-core": "^1.59.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Memex-Working-Group/website-to-markdown-scraper.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
-  "dependencies": {
-    "playwright": "^1.59.1"
-  }
+  "bugs": {
+    "url": "https://github.com/Memex-Working-Group/website-to-markdown-scraper/issues"
+  },
+  "homepage": "https://github.com/Memex-Working-Group/website-to-markdown-scraper#readme"
 }
