@@ -10,23 +10,15 @@ export async function getWebsiteAsPDF(website, outputFilePath, chromiumDebugPort
     }
     const browser = await chromium.connectOverCDP(chromiumDebugPortURL);
 
-    // // Get the first (usually only) page/context
-    // const contexts = browser.contexts();
-    // let page;
-    // if (contexts.length > 0) {
-    //   page = contexts[0].pages()[0];        // Use existing tab
-    // } else {
-    //   page = await contexts[0].newPage();   // Fallback: create new tab
-    // }
-
-
+    // Launch new Window
     const newContext = await browser.newContext({
         bypassCSP: true   // This works on newly created contexts
     });
     const page = await newContext.newPage();
     await page.goto(website, { waitUntil: 'networkidle' });
-    console.log('✅ Connected to Chrome on port 9222');
+    // console.log('✅ Connected to Chrome on port 9222');
 
+    // Go to page save it as a pdf
     const content = await page.pdf({
         path: outputFilePath,           // Save to file
         format: 'Letter',                 // or 'Letter'

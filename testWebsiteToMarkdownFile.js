@@ -1,6 +1,6 @@
 import { getWebsiteAsMarkdown } from "./getWebsiteAsMarkdown.js";
 
-let website = 'https://gwern.net/fiction/craneyard'
+let website = 'https://www.astralcodexten.com/p/the-dilbert-afterlife'
 let content = await getWebsiteAsMarkdown(website)
 
 import fs from 'fs/promises';

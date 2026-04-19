@@ -4,7 +4,6 @@
   "description": "``` bash helium-browser --remote-debugging-port=9222 --disable-web-security ```",
   "main": "getWebsiteAsMarkdown.js",
   "dependencies": {
-    "@epubkit/epub-gen-memory": "^1.0.10-aplha.14",
     "playwright": "^1.59.1",
     "playwright-core": "^1.59.1"
   },

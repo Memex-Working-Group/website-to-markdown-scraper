@@ -6,39 +6,26 @@ export async function getWebsiteAsMarkdown(website, chromiumDebugPortURL) {
         chromiumDebugPortURL = 'http://localhost:9222'
     }
     const browser = await chromium.connectOverCDP(chromiumDebugPortURL);
-
-    // // Get the first (usually only) page/context
-    // const contexts = browser.contexts();
-    // let page;
-    // if (contexts.length > 0) {
-    //   page = contexts[0].pages()[0];        // Use existing tab
-    // } else {
-    //   page = await contexts[0].newPage();   // Fallback: create new tab
-    // }
-
-
+    
+    // Launch new Window
     const newContext = await browser.newContext({
         bypassCSP: true   // This works on newly created contexts
     });
     const page = await newContext.newPage();
-
-    console.log('✅ Connected to Chrome on port 9222');
-
-    // Example: Go to a page and load Turndown
-    await page.goto(website);
-
+    // console.log('✅ Connected to Chrome on port 9222');
+    
+    // Go to page and grab the markdown as a string
+    await page.goto(website, { waitUntil: 'networkidle' });
     await page.addScriptTag({
         url: 'https://unpkg.com/turndown/dist/turndown.js'
     });
-
     const markdown = await page.evaluate(() => {
         const turndownService = new TurndownService();
         return turndownService.turndown(document.body.innerHTML);
     });
+    // console.log(markdown);
 
-    //   console.log(markdown);
+    // Close the window created
     await newContext.close();
     return markdown
-
-    // Do NOT call browser.close() — you want to keep your Chrome open
 }
