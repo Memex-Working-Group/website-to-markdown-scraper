@@ -1,8 +1,8 @@
 import { getWebsiteAsMarkdown } from "./getWebsiteAsMarkdown.js";
 
-let website = 'https://www.lesswrong.com/posts/bxt7uCiHam4QXrQAA/cyborgism'
-let markdown = await getWebsiteAsMarkdown(website)
+let website = 'https://gwern.net/fiction/craneyard'
+let content = await getWebsiteAsMarkdown(website)
 
 import fs from 'fs/promises';
-await fs.writeFile('output.md', markdown);
-console.log(markdown)
+await fs.writeFile('./output/output.md', content);
+console.log(content)

@@ -11,5 +11,6 @@ helium-browser --remote-debugging-port=9222 --disable-web-security
 
 npm init -y
 npm install playwright
+npm i @epubkit/epub-gen-memory
 
 ```
