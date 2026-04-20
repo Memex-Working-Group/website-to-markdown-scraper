@@ -18,7 +18,7 @@ export async function getWebsiteAsMarkdown(website, chromiumDebugPortURL) {
     await page.goto(website, { waitUntil: 'networkidle' });
     await page.addScriptTag({
         // url: 'https://unpkg.com/turndown/dist/turndown.js'
-        file: './turndown.js'
+        path: './stuff/turndown.js'
     });
     const markdown = await page.evaluate(() => {
         const turndownService = new TurndownService();
