@@ -1,6 +1,6 @@
 import fs from "fs/promises";
 import crypto from "crypto";
-import { getWebsiteAsMarkdown } from "./getWebsiteAsMarkdown.js";
+import { getWebsiteAsMarkdown } from "./stuff/getWebsiteAsMarkdown.js";
 
 async function getUrls() {
   const data = await fs.readFile("urls.txt", "utf-8");

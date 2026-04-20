@@ -1,7 +1,4 @@
 import { chromium } from 'playwright';
-import epubModule from '@epubkit/epub-gen-memory';
-const epub = epubModule.default || epubModule;
-import fs from 'fs';
 
 export async function getWebsiteAsPDF(website, outputFilePath, chromiumDebugPortURL) {
     // Connect to Chrome running with --remote-debugging-port=9222

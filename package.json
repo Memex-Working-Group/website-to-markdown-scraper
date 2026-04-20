@@ -4,6 +4,7 @@
   "description": "``` bash helium-browser --remote-debugging-port=9222 --disable-web-security ```",
   "main": "getWebsiteAsMarkdown.js",
   "dependencies": {
+    "commander": "^14.0.3",
     "playwright": "^1.59.1",
     "playwright-core": "^1.59.1"
   },

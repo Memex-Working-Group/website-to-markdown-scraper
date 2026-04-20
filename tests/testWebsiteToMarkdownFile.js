@@ -1,4 +1,4 @@
-import { getWebsiteAsMarkdown } from "./getWebsiteAsMarkdown.js";
+import { getWebsiteAsMarkdown } from "../stuff/getWebsiteAsMarkdown.js";
 
 let website = 'https://www.astralcodexten.com/p/the-dilbert-afterlife'
 let content = await getWebsiteAsMarkdown(website)

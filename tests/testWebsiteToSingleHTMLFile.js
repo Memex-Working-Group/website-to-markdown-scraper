@@ -1,4 +1,4 @@
-import { getWebsiteAsMHTML } from "./getWebsiteAsMHTML.js";
+import { getWebsiteAsMHTML } from "../stuff/getWebsiteAsMHTML.js";
 
 // https://www.astralcodexten.com/p/the-dilbert-afterlife
 
