@@ -64,7 +64,7 @@ export async function saveWebpageToFolder(website, outputDirectory, chromiumDebu
         compressHTML: false,
         removeHidden: false,
     })
-    await fs.writeFileSync(`${outputDirectory}/content.html`, HTMLPageData)
+    await fs.writeFileSync(`${outputDirectory}/content.html`, HTMLPageData.content)
     console.log('HTML saved to file system at ' + `${outputDirectory}/content.mhtml`)
 
     // Close the window created
