@@ -13,6 +13,9 @@ helium-browser --remote-debugging-port=9222 --disable-web-security
 
 npm init -y
 npm install playwright
+npm install playwright-single-file
+npm install js-yaml
+npm install ipfs-only-hash
 
 ```
 #### Websites to Test

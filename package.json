@@ -5,6 +5,8 @@
   "main": "getWebsiteAsMarkdown.js",
   "dependencies": {
     "commander": "^14.0.3",
+    "ipfs-only-hash": "^4.0.0",
+    "js-yaml": "^4.1.1",
     "playwright": "^1.59.1",
     "playwright-core": "^1.59.1",
     "playwright-single-file": "^0.0.5",

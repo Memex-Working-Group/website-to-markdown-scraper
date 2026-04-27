@@ -2,6 +2,28 @@ import { chromium } from 'playwright';
 import fs from 'fs';
 import { pageToSingleFile } from 'playwright-single-file'
 
+const getISOInTimeZone = (timeZone) => {
+  const now = new Date();
+  
+  // Create a formatter for the specific timezone
+  const formatter = new Intl.DateTimeFormat('sv-SE', {
+    timeZone,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    fractionalSecondDigits: 3,
+  });
+
+  // sv-SE (Sweden) locale is used because it naturally uses the YYYY-MM-DD format
+  const parts = formatter.formatToParts(now);
+  const map = new Map(parts.map(p => [p.type, p.value]));
+
+  return `${map.get('year')}-${map.get('month')}-${map.get('day')}T${map.get('hour')}:${map.get('minute')}:${map.get('second')}.${map.get('fractionalSecond')}`;
+};
+
 export async function saveWebpageToFolder(website, outputDirectory, chromiumDebugPortURL) {
     // Connect to Chrome running with --remote-debugging-port=9222
     if (chromiumDebugPortURL == "" || chromiumDebugPortURL == undefined) {
@@ -39,9 +61,15 @@ export async function saveWebpageToFolder(website, outputDirectory, chromiumDebu
         const turndownService = new TurndownService();
         return turndownService.turndown(document.body.innerHTML);
     });
+    const now = new Date();
+    const date = now.toLocaleString('sv-SE', { timeZoneName: 'short' });
+    let markdownWithMetadata = "---\n" + 
+      `source: ${website}\n` +
+      `created: ${date}\n` +
+      "---\n" + markdown
     console.log('Markdown fetched')
     // console.log(markdown);
-    await fs.writeFileSync(`${outputDirectory}/content.md`, markdown)
+    await fs.writeFileSync(`${outputDirectory}/content.md`, markdownWithMetadata)
     console.log('Markdown saved to file system at ' + `${outputDirectory}/content.md)`)
 
     // Go to page and save it as a mhtml file
