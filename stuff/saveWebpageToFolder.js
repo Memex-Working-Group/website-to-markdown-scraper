@@ -1,5 +1,6 @@
 import { chromium } from 'playwright';
 import fs from 'fs';
+import { pageToSingleFile } from 'playwright-single-file'
 
 export async function saveWebpageToFolder(website, outputDirectory, chromiumDebugPortURL) {
     // Connect to Chrome running with --remote-debugging-port=9222
@@ -57,6 +58,14 @@ export async function saveWebpageToFolder(website, outputDirectory, chromiumDebu
         printBackground: true,           // Include background colors/images
     });
     console.log('pdf saved to file system at ' + outputDirectory + "/content.pdf")
+
+    const HTMLPageData = await pageToSingleFile(page, {
+        removeScripts: true,
+        compressHTML: false,
+        removeHidden: false,
+    })
+    await fs.writeFileSync(`${outputDirectory}/content.html`, HTMLPageData)
+    console.log('HTML saved to file system at ' + `${outputDirectory}/content.mhtml`)
 
     // Close the window created
     await newContext.close();

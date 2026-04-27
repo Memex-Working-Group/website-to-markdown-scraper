@@ -1,8 +1,6 @@
 // [Executing within Playwright (headless browser) · gildas-lormeau/SingleFile-MV3 Wiki](https://github.com/gildas-lormeau/SingleFile-MV3/wiki/Executing-within-Playwright-(headless-browser))
 
 import { chromium } from "playwright"
-// @ts-expect-error
-import { getHookScriptSource, getScriptSource, getZipScriptSource } from "single-file-cli/lib/single-file-script.js"
 import { pageToSingleFile } from 'playwright-single-file'
 
 export async function getWebsiteAsSingleHTML(website, chromiumDebugPortURL) {
