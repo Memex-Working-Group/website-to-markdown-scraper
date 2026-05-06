@@ -50,8 +50,8 @@ export async function saveWebpageToFolder(website, outputDirectory, chromiumDebu
         console.log(`There was an error loging the page, going to try and save it anyways, error posted below\n\n${JSON.stringify(error, null, 2)}`)
     }
     console.log('Waiting 10 seconds for webpage to fully load, this is the most reliable method trust')
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    console.log('Successfully waited 10 seconds')
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    console.log('Successfully waited 5 seconds')
     await page.addScriptTag({
         // url: 'https://unpkg.com/turndown/dist/turndown.js'
         path: './stuff/turndown.js'
