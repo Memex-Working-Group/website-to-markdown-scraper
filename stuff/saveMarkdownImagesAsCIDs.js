@@ -23,7 +23,9 @@ function extractFrontmatter(markdownString) {
 export async function saveMarkdownImagesAsCIDs(markdown, CID_PATH, output_file_path) {
     let imageLinks = extractImageLinksRobust(markdown)
     let fronmatterYAML = extractFrontmatter(markdown)
+    console.log('fronmatterYAML')
     console.log(fronmatterYAML)
+    console.log('imageLinks')
     console.log(imageLinks)
     let markdownLinkToCID = {}
     let URLsSaved = []
@@ -59,5 +61,6 @@ export async function saveMarkdownImagesAsCIDs(markdown, CID_PATH, output_file_p
     let newMarkdown = markdown
     const pattern = new RegExp(Object.keys(markdownLinkToCID).join('|'), 'g')
     const result = newMarkdown.replace(pattern, (matched) => markdownLinkToCID[matched])
+    // console.log(result)
     await fs.writeFileSync(output_file_path, result)
 }

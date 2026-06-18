@@ -34,4 +34,10 @@ node run.js https://ipld.io/docs/codecs/known/dag-cbor/
 
 node run.js https://slatestarcodex.com/2020/03/30/legal-systems-very-different-from-ours-because-i-just-made-them-up/
 
+node run.js https://x.com/rohit4verse/status/2033945654377283643
+
+node run.js https://www.personfamiliar.com/p/ai-humanity-and-dr-manhattan-syndrome
+
+node run.js https://joshblais.com/blog/using-the-internet-like-its-1999/
+
 ```

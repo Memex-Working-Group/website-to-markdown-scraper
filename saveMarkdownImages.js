@@ -17,13 +17,15 @@ function addSuffixToFilename(pathStr, suffix = '') {
   return pathStr + suffix;
 }
 
-const markdown_file_path = './web-content/slatestarcodex.com/2026-06-18_17-30-50/content.md'
+const args = process.argv;
+const markdown_file_path = args[2]
+console.log('markdown_file_path=' + markdown_file_path)
 const CID_file_path = './web-content/CIDs'
 const markdown_output_path = addSuffixToFilename(markdown_file_path, '-CID')
 
 
 const markdown = fs.readFileSync(markdown_file_path, 'utf-8')
-console.log(markdown)
+// console.log(markdown)
 await saveMarkdownImagesAsCIDs(markdown, CID_file_path, markdown_output_path)
 
 console.log(markdown_output_path)
