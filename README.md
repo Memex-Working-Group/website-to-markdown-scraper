@@ -32,4 +32,6 @@ node run.js https://gwern.net/fiction/craneyard
 
 node run.js https://ipld.io/docs/codecs/known/dag-cbor/
 
+node run.js https://slatestarcodex.com/2020/03/30/legal-systems-very-different-from-ours-because-i-just-made-them-up/
+
 ```
