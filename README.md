@@ -7,7 +7,7 @@
 helium-browser --remote-debugging-port=9222 --disable-web-security
 
 # MacOS
-# Remember to Quite Brave
+# Remember to Quit Brave
 open -a "Brave Browser" --args --remote-debugging-port=9222 --disable-web-security
 
 ```
